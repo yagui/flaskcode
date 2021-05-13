@@ -55,6 +55,7 @@ def dir_tree(abs_path, abs_root_path, exclude_names=None, excluded_extensions=No
     except OSError:
         pass
     else:
+        dir_entries.sort()
         for name in dir_entries:
             if exclude_names and name in exclude_names:
                 continue

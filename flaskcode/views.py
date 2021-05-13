@@ -9,7 +9,7 @@ from . import blueprint
 @blueprint.route('/')
 def index():
     dirname = os.path.basename(g.flaskcode_resource_basepath)
-    dtree = dir_tree(g.flaskcode_resource_basepath, g.flaskcode_resource_basepath + '/')
+    dtree = dir_tree(g.flaskcode_resource_basepath, g.flaskcode_resource_basepath + '/', exclude_names='__pycache__', allowed_extensions='py')
     return render_template('flaskcode/index.html', dirname=dirname, dtree=dtree)
 
 
